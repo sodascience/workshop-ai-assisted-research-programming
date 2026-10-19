@@ -22,7 +22,9 @@ Utrecht University Programming Café · Oct 22, 2026
 - Postdoc researcher, ODISSEI Social Data Science Team
     - Provide research support and training for social scientists
     - AI methodology research
-- PhD in NLP, MSc in Statistics, BAs in psychology and social sciences
+- PhD in NLP
+- MSc in Statistics
+- BAs in behavioural and social sciences
 
 ---
 # What is your experience with AI-assisted coding?
@@ -40,11 +42,14 @@ Utrecht University Programming Café · Oct 22, 2026
 - Generating code snippets for statistical analysis
 - Code documentation and commenting
 - Debugging and error handling
+- etc.
 
 ---
 # A Codex example
 
 <!-- Show how writing research code with AI can quickly blow up and become unmanageable. -->
+<!-- Even with the planning mode, each change can be substantial. -->
+
 
 ---
 # Challenges of AI-assisted coding
@@ -53,69 +58,77 @@ Utrecht University Programming Café · Oct 22, 2026
 - Losing control over the research process
 - Difficulty in debugging and troubleshooting
 - Over-reliance on AI-generated code
+- etc.
 
 ---
 
 # Your role as researcher
 
-- Own the question, data meanings and exclusions.
+Using AI or not:
 
-- Understand the change well enough to explain it.
+- Own the research questions, data and decisions.
+- Understand any change (e.g., code, analysis) well enough to explain it.
+- Validate the results.
+- Reproduce the study. 
 
-- Choose evidence that could reveal an error.
+---
+# Your role as researcher
+When using AI:
 
-- AI output is a proposal to inspect.
-
-- Adjust your expectations: AI should not replace your expertise.
+- AI does not replace your expertise. 
+- Any AI output should be inspected and challenged.
+- Adjust your expectations: *Maybe don't cram what in the past would be three-months of work into one day.*
 
 ---
 # Workshop goals
 
 You will learn:
 
-- Plan before code · review presented choices
-
+- Plan and review plan before AI-assisted coding
 - Divide work into small, testable units
-
 - Transfer, check, inspect the diff, commit
+- Resume from updated project state
 
-- Resume from updated project
+<br>
+**Disclaimer**: Personal experience and opinions; feedback welcome. 
 
 ---
 # Workshop toolkit
 
 **UU AI Chat:** discuss, plan, propose code, debug
-- The chat cannot directly read or edit your local project.
+- Note: The chat cannot directly read or edit your local project.
 
-**Local editor + Python:** save files, execute, inspect outputs
+**Local editor + Python/R:** save files, execute, inspect outputs
 
-**Git:** inspect changes and save checkpoints
+**Git and GitHub desktop:** inspect changes and save checkpoints
 
 <!-- Some R/Python familiarity is enough; no prior AI coding or Git expertise required. -->
 
 ---
 # Workshop research project
 
-**SoDa Open Research Teaching Datasets (SORTD)**: https://zenodo.org/records/23419332
+**SoDa Open Research Teaching Datasets (SORTD)**: 
+- https://zenodo.org/records/23419332
 
 - 11,700 works · 2011–2025 · 26 primary fields
 
 - 30 works per year × field; English articles with abstracts
 
-- Use actual `is_oa`, `cited_by_count`, `publication_year`.
+- Includes: `works.csv`, `abstracts.csv`, `authors.csv`, `funding.csv`, `topics.csv` etc.
 
 ---
 # Example research questions
-- What factors are associated with open access (OA) publication?
-- What factors are associated with citation counts?
-- What factors are associated with retraction?
+What factors are associated with 
+- citation counts?
+- open access (OA) publication?
+- retraction?
 
 --- 
 # Proposed AI-assisted research coding workflow
-1. Begin with a reviewed plan
-2. Make the units verifiable
+1. Begin with a carefully reviewed plan
+2. Make the units manageable and verifiable
 3. Implement and transfer one change deliberately
-4. Verification is more than “it ran”
+4. Verify!
 5. Review the actual change
 6. Rinse and repeat 2-5
 
@@ -128,10 +141,8 @@ What factors are associated with citation counts?
 # 1. Begin with a reviewed plan
 
 - Research question → available variables → analytical choices
-
 - Inputs → outputs → small implementation units
-    - “Do not write code yet. Identify missing information.”
-
+    - “Do not write code yet. Identify missing information. Ask me for input.”
 - Revise the plan before delegating implementation.
 
 <!-- I will demonstrate this with a live example. -->
@@ -142,10 +153,8 @@ What factors are associated with citation counts?
 
 Example units: 
 
-- **Unit 1:** Read the works.csv → validate column names and types, number of rows, missingness and duplicates
-
-- **Unit 2:** Read the abstracts.csv → [same as above]
-
+- **Unit 1:** Read the `works.csv` → validate column names and types, number of rows, missingness and duplicates
+- **Unit 2:** Read the `abstracts.csv` → [same as above]
 - **Unit 3:** Join the works and abstracts → check that the number of rows is correct, check for missing abstracts, and all works have abstracts
 
 Each remains manageable and verifiable.
@@ -156,17 +165,13 @@ Each remains manageable and verifiable.
 # 3. Implement and transfer one change deliberately
 
 - Supply exact current folder structure, the data and the reviewed plan.
-
 - Ask for one unit of work.
-
 - Read/understand → copy → save → run locally.
-
-Optional later: a unified patch against exact contents.
 
 <!-- I will demonstrate this with a live example. -->
 ---
 
-# 4. Verification is more than “it ran”
+# 4. Verify!
 
 Verification the unit of work, which can involve:
 
@@ -181,11 +186,8 @@ Verification the unit of work, which can involve:
 # 5. Review the actual change
 
 - `git status` → `git diff`
-
-- Open new files: untracked files do not appear in the diff.
-
+- New/untracked files do not appear in the diff.
 - Stage named files → `git diff --cached`
-
 - Passing checks + review → `git commit -m "message"`
 
 <!-- I will demonstrate this with a live example. -->
@@ -198,13 +200,19 @@ Verification the unit of work, which can involve:
 - Ask for the next unit of work.
 - Repeat the process: implement, verify, review, commit.
 
-Optional tip: for larger changes, ask for a patch against the exact current state of the project. Use `git apply` to apply the patch, then verify and commit.
+**Optional tip:** for larger changes, ask for a patch against the exact current state of the project. Use `git apply` to apply the patch, then verify and commit.
 
 <!-- I will demonstrate this with a live example. -->
 
 ---
-# Exercise
-Research question: What factors are associated with retraction?
+# Questions?
+
+---
+# Exercise · Example research questions
+Example research questions: What factors are associated with 
+- citation counts?
+- open access (OA) publication?
+- retraction?
 
 ---
 
@@ -213,9 +221,7 @@ Research question: What factors are associated with retraction?
 **15 min · exercises/01-plan.md**
 
 1. Inspect locally; provide research context, folder structure and data into UU AI Chat.
-
 2. Ask for a plan without code; revise a weak choice.
-
 3. Make sure each unit is verifiable and manageable.
 
 **Finish**: three units, inputs, outputs, independent checks.
@@ -227,7 +233,6 @@ Research question: What factors are associated with retraction?
 **15 min · exercises/02-implement.md**
 
 1. Ask for the first unit of work. 
-
 2. Read/understand → copy → save → run locally.
 
 **Finish**: local run attempted.
@@ -261,7 +266,7 @@ Research question: What factors are associated with retraction?
 
 # Exercise 5 · Revise plan
 
-**105–115 min · exercises/05-revise.md**
+**10 min · exercises/05-revise.md**
 
 1. After a few units, ask for a plan revision to accommodate new insights.
 2. Review new plan and units and commit any verified changes.
@@ -279,5 +284,5 @@ Update project, then repeat.
 
 <br>
 
-*What caught an error today?*
-*How do you like this AI-assisted coding approach?*
+>*What worked and what didn't?*
+>*How do you like this AI-assisted coding approach?*
