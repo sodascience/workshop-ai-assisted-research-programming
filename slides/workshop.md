@@ -216,63 +216,87 @@ Example research questions: What factors are associated with
 
 ---
 
-# Exercise 1 · Make and review a plan
+# Exercise 1 · Create and review a study design
 
-**15 min · exercises/01-plan.md**
+**15 min · [exercises/README.md](../exercises/README.md#exercise-1--create-and-review-a-study-design)**
 
-1. Inspect locally; provide research context, folder structure and data into UU AI Chat.
-2. Ask for a plan without code; revise a weak choice.
-3. Make sure each unit is verifiable and manageable.
+1. Start Chat 1 with the study-design prompt and template.
+2. Review the research decisions; keep open choices explicit.
+3. Save and commit study_design.md.
 
-**Finish**: three units, inputs, outputs, independent checks.
-
----
-
-# Exercise 2 · Implement one unit
-
-**15 min · exercises/02-implement.md**
-
-1. Ask for the first unit of work. 
-2. Read/understand → copy → save → run locally.
-
-**Finish**: local run attempted.
+**Finish**: reviewed study design saved and committed.
 
 ---
 
-# Exercise 3 · Break, debug, commit
+# Exercise 2 · Create and review an implementation plan
 
-**15 min · exercises/03-verify.md**
+**15 min · [exercises/README.md](../exercises/README.md#exercise-2--create-and-review-an-implementation-plan)**
 
-1. Test and verify the first unit of work.
-2. Review the actual change with `git diff` and `git status`.
-3. Stage and commit the verified change.
+1. Start Chat 2 with the saved design, planning prompt and template.
+2. Check the first three units: small goals, inputs, outputs and checks.
+3. Save and commit implementation_plan.md.
 
-**Finish**: unit verified and committed.
-
----
-
-# Exercise 4 · Extend in small steps
-
-**15 min · exercises/04-extend.md**
-
-1. Ask for the next unit of work.
-2. Test and verify the next unit of work.
-3. Review the actual change with `git diff` and `git status`.
-4. Stage and commit the verified change.
-
-**Finish**: next unit verified and committed.
+**Finish**: reviewed implementation plan saved and committed.
 
 ---
 
-# Exercise 5 · Revise plan
+# Exercise 3 · Implement one unit
 
-**10 min · exercises/05-revise.md**
+**15 min · [exercises/README.md](../exercises/README.md#exercise-3--implement-one-unit)**
 
-1. After a few units, ask for a plan revision to accommodate new insights.
-2. Review new plan and units and commit any verified changes.
-3. Ask for the next unit of work.
+1. Start Chat 3 with both documents and the unit-implementation prompt.
+2. Request the first unit only.
+3. Read and understand → copy → save → run locally.
 
-**Finish**: plan revised and next unit started.
+**Finish**: local run or inspection attempted.
+
+---
+
+# Exercise 4 · Verify the unit change
+
+**15 min · [exercises/README.md](../exercises/README.md#exercise-4--verify-the-unit-change)**
+
+1. Request independent checks against the unit requirements.
+2. Run the checks locally and inspect the outputs.
+3. Debug failures and rerun the checks.
+
+**Finish**: unit verified; unexplained failures resolved.
+
+---
+
+# Exercise 5 · Review and commit the unit change
+
+**10 min · [exercises/README.md](../exercises/README.md#exercise-5--review-and-commit-the-unit-change)**
+
+1. Review changed files with GitHub Desktop or git diff and git status.
+2. Stage only the intended files.
+3. Commit the verified change and report completion to Chat 3.
+
+**Finish**: unit change reviewed and committed.
+
+---
+
+# Optional A · Extend in small steps
+
+**15 min · [exercises/README.md](../exercises/README.md#optional-a--extend-in-small-steps)**
+
+1. Request the next unit whose dependencies are complete.
+2. Implement, run and verify locally.
+3. Review and commit the verified change.
+
+**Finish**: another unit verified and committed.
+
+---
+
+# Optional B · Revise the plan
+
+**10 min · [exercises/README.md](../exercises/README.md#optional-b--revise-the-plan)**
+
+1. Describe a new finding or propose splitting a large unit.
+2. Review changes to affected sections only.
+3. Save and commit the revision; recheck affected work.
+
+**Finish**: focused plan revision saved and committed.
 
 ---
 
