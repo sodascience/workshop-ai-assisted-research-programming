@@ -3,64 +3,188 @@ marp: true
 title: AI-assisted research programming
 description: Utrecht University Programming Café
 theme: default
-paginate: true
+paginate: false
 size: 16:9
+style: |
+  section[class] { display: flex; flex-direction: column; background: white; color: #292929; font-family: Arial, Helvetica, sans-serif; font-size: 36px; line-height: 1.2; padding: 76px 54px 45px; justify-content: flex-start; }
+  section[class] h1 { color: #066b83; font-size: 60px; line-height: 1.12; margin: 0 0 24px; letter-spacing: -1px; }
+  section[class] p { margin: 0 0 18px; }
+  section[class] ul { margin: 0 0 16px; padding-left: 30px; }
+  section[class] li { margin: 0 0 5px; }
+  section[class] li > ul { font-size: 24px; margin-top: 5px; margin-bottom: 0; }
+  section a { color: #087e8b; }
+  section::after { display: none; }
+  section p:has(> img) { margin: 0; padding: 0; }
+  section img { position: absolute; max-width: none; max-height: none; margin: 0; object-fit: fill; }
+  section.s1 { padding: 185px 140px 80px; }
+  section.s1 h1 { font-size: 56px; white-space: nowrap; margin-bottom: 20px; }
+  section.s1 p { font-size: 28px; }
+  section.s2 > ul { width: 640px; font-size: 32px; }
+  section.s2 li > ul { font-size: 23px; }
+  section.s3 h1 { max-width: 1160px; font-size: 58px; }
+  section.s5 h1 { position: absolute; left: 54px; top: 76px; z-index: 1; font-size: 60px; }
+  section.s11 em, section.s12 > p { font-style: italic; }
+  section.s14 { font-size: 32px; }
+  section.s14 > p:last-of-type { margin-top: 55px; font-style: italic; }
+  section.s15 h1 { position: absolute; left: 54px; top: 292px; width: 320px; }
+  section.s16 strong { font-weight: 700; }
+  section.s17 > p { width: 390px; }
+  section.s17 > p:first-of-type { margin-top: 115px; font-size: 34px; }
+  section.s18 > p:first-of-type { position: absolute; left: 453px; top: 540px; width: 740px; z-index: 1; color: #066b83; font-size: 30px; font-style: italic; }
+  section.s19 { font-size: 32px; }
+  section.s19 > p { font-size: 27px; }
+  section.s19 > ul { width: 780px; }
+  section.s19 li > ul { font-size: 22px; }
+  section.s23, section.s24 { font-size: 34px; }
+  section.s23 li > ul, section.s24 li > ul, section.s25 li > ul { font-size: 21px; line-height: 1.2; }
+  section.s25 { font-size: 34px; }
+  section.s28 { justify-content: center !important; padding-left: 54px; }
+  section.s28 h1 { font-size: 62px; }
+  section.s29 { background: #066b83; justify-content: center !important; align-items: center; text-align: center; }
+  section.s29 h1 { color: white; font-size: 56px; }
+  section.s30 > p, section.s30 > ul { width: 590px; }
+  section.s30 > p:last-of-type { margin-top: 75px; }
+  section.s32 > p { text-align: center; margin-top: 55px; }
+  section.s32 > p:first-of-type { font-weight: bold; }
+  section.s1 img[src$="pptx-image-03.png"] { left: 917.83px; top: 308.80px; width: 247.00px; height: 267.09px; }
+  section.s2 img[src$="pptx-image-15.png"] { left: 730.98px; top: 0.00px; width: 549.02px; height: 720.00px; }
+  section.s4 img[src$="pptx-image-10.png"] { left: 0.00px; top: 0.00px; width: 1280.00px; height: 632.23px; }
+  section.s4 img[src$="pptx-image-08.png"] { left: 719.35px; top: 628.12px; width: 560.65px; height: 91.88px; }
+  section.s5 img[src$="pptx-image-11.png"] { left: 229.07px; top: 0.00px; width: 1050.93px; height: 720.00px; }
+  section.s6 img[src$="pptx-image-14.png"] { left: 57.56px; top: 0.00px; width: 1181.23px; height: 720.00px; }
+  section.s7 img[src$="pptx-image-06.png"] { left: 30.75px; top: 3.77px; width: 1218.49px; height: 712.46px; }
+  section.s8 img[src$="pptx-image-05.png"] { left: 45.48px; top: 0.00px; width: 1194.82px; height: 720.00px; }
+  section.s9 img[src$="pptx-image-09.png"] { left: 34.74px; top: 0.00px; width: 1210.52px; height: 720.00px; }
+  section.s13 img[src$="pptx-image-13.png"] { left: 0.00px; top: 90.29px; width: 1280.00px; height: 538.95px; }
+  section.s15 img[src$="pptx-image-12.png"] { left: 424.58px; top: 0.00px; width: 855.42px; height: 720.00px; }
+  section.s17 img[src$="pptx-image-16.png"] { left: 530.59px; top: 161.33px; width: 749.41px; height: 558.67px; }
+  section.s18 img[src$="pptx-image-04.png"] { left: 20.64px; top: 0.00px; width: 1238.72px; height: 720.00px; }
+  section.s19 img[src$="pptx-image-02.png"] { left: 867.23px; top: 293.56px; width: 319.97px; height: 346.00px; }
+  section.s30 img[src$="pptx-image-03.png"] { left: 729.65px; top: 73.50px; width: 506.72px; height: 547.94px; }
+  section.s1 img[src$="pptx-image-01.png"] { left: 140px; top: 120px; width: 168px; height: auto; }
+  section.s1 p:nth-of-type(2) { position: absolute; top: 515px; left: 140px; font-size: 26px; color: #666; font-style: italic; }
 ---
 
+<!-- _class: s1 -->
+
 # AI-assisted research programming
-**From a research question to verified changes**
+
+**Stay in control**
 *with UU AI Chat + local Python/R + Git*
 
 <br>
-<br>
 
+Qixiang Fang
 Utrecht University Programming Café · Oct 22, 2026
 
+![Workshop repository QR code](assets/pptx-image-03.png)
+
+![SoDa](assets/pptx-image-01.png)
+
 ---
+
+<!-- _class: s2 -->
+
 # About me
-- Qixiang [kis-jang] Fang
-- Postdoc researcher, ODISSEI Social Data Science Team
-    - Provide research support and training for social scientists
-    - AI methodology research
-- PhD in NLP
-- MSc in Statistics
-- BAs in behavioural and social sciences
+
+- Name: Qixiang [kis-jang] Fang
+- Postdoc at ODISSEI Social Data Science (SoDa) Team
+  - Provide research support and training
+  - AI methodology research
+- Academic background:
+  - PhD in NLP
+  - MSc in Statistics
+  - BAs in behavioural and social sciences
+
+![The SoDa Team](assets/pptx-image-15.png)
 
 ---
-# What is your experience with AI-assisted coding?
 
-- Do you use AI for research code?
-- For what tasks?
+<!-- _class: s3 -->
+
+# What is your experience with AI-assisted research programming?
+
+- Who are you?
+- Do you use AI for research code? For what tasks?
 - How has it changed your research workflow?
-- What do you like about it?
-- Do you encounter any issues?
+- What do you like/dislike about it?
 
 ---
-# Examples of AI-assisted coding in research
 
-- Automating data cleaning and preprocessing
-- Generating code snippets for statistical analysis
-- Code documentation and commenting
-- Debugging and error handling
-- etc.
+<!-- _class: s4 -->
+
+![Research AI survey results](assets/pptx-image-10.png)
+![Research AI survey article](assets/pptx-image-08.png)
+
+<!-- Slide 4: Survey results: research uses of AI; Who uses AI in research, and for what? -->
 
 ---
+
+<!-- _class: s5 -->
+
 # A Codex example
 
-<!-- Show how writing research code with AI can quickly blow up and become unmanageable. -->
-<!-- Even with the planning mode, each change can be substantial. -->
-
+![Codex research response](assets/pptx-image-11.png)
 
 ---
+
+<!-- _class: s6 -->
+
+![Codex analysis response](assets/pptx-image-14.png)
+
+<!-- Slide 6: Codex analysis response -->
+
+---
+
+<!-- _class: s7 -->
+
+![Codex files](assets/pptx-image-06.png)
+
+<!-- Slide 7: Codex example: changed files -->
+
+---
+
+<!-- _class: s8 -->
+
+![Codex changes](assets/pptx-image-05.png)
+
+<!-- Slide 8: Codex example: generated changes -->
+
+---
+
+<!-- _class: s9 -->
+
+![Codex analysis code](assets/pptx-image-09.png)
+
+<!-- Slide 9: Codex example: generated analysis code -->
+
+---
+
+<!-- _class: s10 -->
+
 # Challenges of AI-assisted coding
 
 - Lack of understanding of the generated code
-- Losing control over the research process
 - Difficulty in debugging and troubleshooting
+- Losing control over the research process
 - Over-reliance on AI-generated code
 - etc.
 
 ---
+
+<!-- _class: s11 -->
+
+# Your role as researcher
+
+When using AI:
+
+- AI does not replace your expertise.
+- Any AI output should be inspected and challenged.
+- Adjust your expectations: Maybe don't cram what in the past would be three-months of work into one day.
+
+---
+
+<!-- _class: s12 -->
 
 # Your role as researcher
 
@@ -69,244 +193,244 @@ Using AI or not:
 - Own the research questions, data and decisions.
 - Understand any change (e.g., code, analysis) well enough to explain it.
 - Validate the results.
-- Reproduce the study. 
+- Reproduce the study.
 
 ---
-# Your role as researcher
-When using AI:
 
-- AI does not replace your expertise. 
-- Any AI output should be inspected and challenged.
-- Adjust your expectations: *Maybe don't cram what in the past would be three-months of work into one day.*
+<!-- _class: s13 -->
+
+![Research reproducibility article](assets/pptx-image-13.png)
+
+<!-- Slide 13: AI-assisted teams and research reproducibility -->
 
 ---
+
+<!-- _class: s14 -->
+
 # Workshop goals
+
+Target: researchers with (limited) programming experience
 
 You will learn:
 
 - Plan and review plan before AI-assisted coding
-- Divide work into small, testable units
+- Divide work into small, verifiable units
 - Transfer, check, inspect the diff, commit
 - Resume from updated project state
 
-<br>
-**Disclaimer**: Personal experience and opinions; feedback welcome. 
+**Disclaimer**: Personal experience and opinions; feedback welcome.
 
 ---
-# Workshop toolkit
 
-**UU AI Chat:** discuss, plan, propose code, debug
-- Note: The chat cannot directly read or edit your local project.
+<!-- _class: s15 -->
+
+# Proposed workflow
+
+![Research workflow](assets/pptx-image-12.png)
+
+---
+
+<!-- _class: s16 -->
+
+# Workshop toolkit
 
 **Local editor + Python/R:** save files, execute, inspect outputs
 
 **Git and GitHub desktop:** inspect changes and save checkpoints
 
-<!-- Some R/Python familiarity is enough; no prior AI coding or Git expertise required. -->
+---
+
+<!-- _class: s17 -->
+
+# Workshop toolkit
+
+UU AI Chat: discuss, plan, propose code, debug
+
+https://aichat.uu.nl
+
+
+![UU AI Chat announcement](assets/pptx-image-16.png)
 
 ---
-# Workshop research project
 
-**SoDa Open Research Teaching Datasets (SORTD)**: 
-- https://zenodo.org/records/23419332
+<!-- _class: s18 -->
+
+Note: The chat cannot directly read or edit your local project.
+
+
+![UU AI Chat interface](assets/pptx-image-04.png)
+
+---
+
+<!-- _class: s19 -->
+
+# Workshop toolkit
+
+**SoDa Open Research Teaching Datasets (SORTD):**
 
 - 11,700 works · 2011–2025 · 26 primary fields
+- 30 works per year × field
+- English articles with abstracts
+- Includes:
+  - `works.csv`,
+  - `abstracts.csv`,
+  - `authors.csv`,
+  - `funding.csv`,
+  - `topics.csv`
+  - etc.
 
-- 30 works per year × field; English articles with abstracts
-
-- Includes: `works.csv`, `abstracts.csv`, `authors.csv`, `funding.csv`, `topics.csv` etc.
+![SORTD dataset QR code](assets/pptx-image-02.png)
 
 ---
+
+<!-- _class: s20 -->
+
 # Example research questions
-What factors are associated with 
+
+What factors are associated with
+
 - citation counts?
 - open access (OA) publication?
 - retraction?
 
---- 
-# Proposed AI-assisted research coding workflow
-1. Begin with a carefully reviewed plan
-2. Make the units manageable and verifiable
-3. Implement and transfer one change deliberately
-4. Verify!
-5. Review the actual change
-6. Rinse and repeat 2-5
-
----
-# Research question of choice
-What factors are associated with citation counts?
-
 ---
 
-# 1. Begin with a reviewed plan
+<!-- _class: s21 -->
 
-- Research question → available variables → analytical choices
-- Inputs → outputs → small implementation units
-    - “Do not write code yet. Identify missing information. Ask me for input.”
-- Revise the plan before delegating implementation.
+# Demo: Research question
 
-<!-- I will demonstrate this with a live example. -->
+What factors are associated with
+
+- citation counts?
+- ~~open access (OA) publication?~~
+- ~~retraction?~~
 
 ---
 
-# 2. Make the units manageable and verifiable
+<!-- _class: s22 -->
 
-Example units: 
+# 0. Basic local setup
 
-- **Unit 1:** Read the `works.csv` → validate column names and types, number of rows, missingness and duplicates
-- **Unit 2:** Read the `abstracts.csv` → [same as above]
-- **Unit 3:** Join the works and abstracts → check that the number of rows is correct, check for missing abstracts, and all works have abstracts
+- Create a local Git-tracked repository
+- Gather existing work/resources/files
+  - Study description
+  - Data
+  - Code
+  - etc.
 
-Each remains manageable and verifiable.
-
-<!-- I will demonstrate this with a live example. -->
 ---
 
-# 3. Implement and transfer one change deliberately
+<!-- _class: s23 -->
 
-- Supply exact current folder structure, the data and the reviewed plan.
-- Ask for one unit of work.
-- Read/understand → copy → save → run locally.
+# 1. Design
 
-<!-- I will demonstrate this with a live example. -->
+- Create a project in UU AI Chat and start Chat 1.
+  - Attach a study design template, and use an appropriate prompt.
+- Answer the questions.
+  - Review the proposed choices and ask for revisions where needed.
+  - Keep uncertain decisions labelled as provisional.
+- Approve the design when ready.
+- Save it locally, review the saved file, and commit it when ready.
+
 ---
+
+<!-- _class: s24 -->
+
+# 2. Plan
+
+- Start Chat 2 in the same project.
+  - Attach the approved study design and an implementation plan template, then use an appropriate prompt.
+- Check that the plan follows the design.
+  - Does each unit have one small goal, clear inputs, a deliverable, and checks you can understand?
+- Ask to split any unit that feels too large.
+- Review and approve the plan, save it locally and commit it.
+
+---
+
+<!-- _class: s25 -->
+
+# 3. Implement (one unit)
+
+- Start Chat 3 in the same project.
+  - Attach both study design and implementation plan.
+  - Ask: “Implement Unit # only.”
+  - Read the response. Ask about anything you do not understand.
+
+- Save, run and inspect code
+  - Save the suggested code or files locally and run any code using the provided instructions.
+  - Inspect the result.
+
+- If something fails:
+  - Share the error, expected behaviour, and relevant code.
+  - Ask: “Explain the cause and suggest the smallest fix for this unit."
+  - Apply a fix you understand, then rerun the unit and its checks.
+
+---
+
+<!-- _class: s26 -->
 
 # 4. Verify!
 
-Verification the unit of work, which can involve:
-
-- Checking the output against expected results.
-- Ensuring the code behaves as intended under various scenarios.
-- Confirming that the implementation meets the specified requirements.
-
-<!-- I will demonstrate this with a live example. -->
+- Ask: “Provide independent verification checks for Unit # against its requirements.”
+- Read and run the checks locally. Compare outputs with the requirements.
+- Report which checks passed. Resolve any unexplained failures before continuing.
 
 ---
 
-# 5. Review the actual change
+<!-- _class: s27 -->
 
-- `git status` → `git diff`
-- New/untracked files do not appear in the diff.
-- Stage named files → `git diff --cached`
-- Passing checks + review → `git commit -m "message"`
+# 5. Commit
 
-<!-- I will demonstrate this with a live example. -->
+- Inspect the changed files in your editor or GitHub Desktop.
+- Confirm the changes match the requested unit and include no unrelated edits.
+- Stage only the intended implementation and verification files.
+- Commit with a short message describing the change.
+- Tell Chat 3 the unit is verified and committed before requesting another unit.
+
+---
+
+<!-- _class: s28 -->
+
+# Rinse and repeat 2-5
 
 ---
 
-# 6. Rinse and repeat 2-5
+<!-- _class: s29 -->
 
-- Upload the verified change to the chat.
-- Ask for the next unit of work.
-- Repeat the process: implement, verify, review, commit.
-
-**Optional tip:** for larger changes, ask for a patch against the exact current state of the project. Use `git apply` to apply the patch, then verify and commit.
-
-<!-- I will demonstrate this with a live example. -->
-
----
 # Questions?
 
 ---
-# Exercise · Example research questions
-Example research questions: What factors are associated with 
+
+<!-- _class: s30 -->
+
+# Exercise
+
+What factors are associated with
+
 - citation counts?
 - open access (OA) publication?
 - retraction?
 
----
+Go to [exercises/README.md](../exercises/README.md)
 
-# Exercise 1 · Create and review a study design
-
-**15 min · [exercises/README.md](../exercises/README.md#exercise-1--create-and-review-a-study-design)**
-
-1. Start Chat 1 with the study-design prompt and template.
-2. Review the research decisions; keep open choices explicit.
-3. Save and commit study_design.md.
-
-**Finish**: reviewed study design saved and committed.
+![Workshop repository QR code](assets/pptx-image-03.png)
 
 ---
 
-# Exercise 2 · Create and review an implementation plan
+<!-- _class: s31 -->
 
-**15 min · [exercises/README.md](../exercises/README.md#exercise-2--create-and-review-an-implementation-plan)**
+# Discussion
 
-1. Start Chat 2 with the saved design, planning prompt and template.
-2. Check the first three units: small goals, inputs, outputs and checks.
-3. Save and commit implementation_plan.md.
-
-**Finish**: reviewed implementation plan saved and committed.
+- What worked and what didn't?
+- How do you like this AI-assisted coding approach?
+- Any other question?
 
 ---
 
-# Exercise 3 · Implement one unit
+<!-- _class: s32 -->
 
-**15 min · [exercises/README.md](../exercises/README.md#exercise-3--implement-one-unit)**
+# Take home
 
-1. Start Chat 3 with both documents and the unit-implementation prompt.
-2. Request the first unit only.
-3. Read and understand → copy → save → run locally.
-
-**Finish**: local run or inspection attempted.
-
----
-
-# Exercise 4 · Verify the unit change
-
-**15 min · [exercises/README.md](../exercises/README.md#exercise-4--verify-the-unit-change)**
-
-1. Request independent checks against the unit requirements.
-2. Run the checks locally and inspect the outputs.
-3. Debug failures and rerun the checks.
-
-**Finish**: unit verified; unexplained failures resolved.
-
----
-
-# Exercise 5 · Review and commit the unit change
-
-**10 min · [exercises/README.md](../exercises/README.md#exercise-5--review-and-commit-the-unit-change)**
-
-1. Review changed files with GitHub Desktop or git diff and git status.
-2. Stage only the intended files.
-3. Commit the verified change and report completion to Chat 3.
-
-**Finish**: unit change reviewed and committed.
-
----
-
-# Optional A · Extend in small steps
-
-**15 min · [exercises/README.md](../exercises/README.md#optional-a--extend-in-small-steps)**
-
-1. Request the next unit whose dependencies are complete.
-2. Implement, run and verify locally.
-3. Review and commit the verified change.
-
-**Finish**: another unit verified and committed.
-
----
-
-# Optional B · Revise the plan
-
-**10 min · [exercises/README.md](../exercises/README.md#optional-b--revise-the-plan)**
-
-1. Describe a new finding or propose splitting a large unit.
-2. Review changes to affected sections only.
-3. Save and commit the revision; recheck affected work.
-
-**Finish**: focused plan revision saved and committed.
-
----
-
-# Take home: the verified change
-
-**Plan → review → one unit → transfer → check → diff → commit**
+Design → plan → implement → verify → commit
 
 Update project, then repeat.
-
-<br>
-
->*What worked and what didn't?*
->*How do you like this AI-assisted coding approach?*
